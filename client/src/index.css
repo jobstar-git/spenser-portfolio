@@ -1,0 +1,157 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Inter', sans-serif;
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-gradient-x: gradient-x 15s ease infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes gradient-x {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+}
+
+:root {
+  color-scheme: light dark;
+  /* Default to light mode for :root */
+  --background: 0 0% 98%;
+  --foreground: 0 0% 3.6%;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 3.6%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 3.6%;
+  
+  --primary: 217 91% 60%;
+  --primary-foreground: 222 47.4% 11.2%;
+  
+  --secondary: 217.2 32.6% 90%;
+  --secondary-foreground: 222 47% 11%;
+  
+  --muted: 217.2 32.6% 85%;
+  --muted-foreground: 215 13.8% 34.9%;
+  
+  --accent: 217.2 32.6% 85%;
+  --accent-foreground: 222 47% 11%;
+  
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  
+  --border: 217.2 32.6% 90%;
+  --input: 217.2 32.6% 95%;
+  --ring: 224.3 76.3% 48%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 222 47% 11%;
+  --foreground: 210 40% 98%;
+  
+  --card: 222 47% 13%;
+  --card-foreground: 210 40% 98%;
+  
+  --popover: 222 47% 11%;
+  --popover-foreground: 210 40% 98%;
+  
+  --primary: 217 91% 60%;
+  --primary-foreground: 222 47.4% 11.2%;
+  
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  
+  --border: 217.2 32.6% 20%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 224.3 76.3% 48%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased selection:bg-primary/20 selection:text-primary transition-colors duration-300;
+  }
+
+  .stroke-text {
+    -webkit-text-stroke: 2px hsl(var(--foreground));
+    color: transparent;
+  }
+
+  .dark .stroke-text {
+    -webkit-text-stroke: 2px hsl(var(--primary));
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+.glass-nav {
+  @apply bg-background/80 backdrop-blur-md border-b border-border/40 supports-[backdrop-filter]:bg-background/60;
+}
+
+.section-padding {
+  @apply py-20 md:py-32;
+}
+
+.container-width {
+  @apply w-full max-w-full mx-auto px-2 sm:px-3 md:px-4 lg:px-8 xl:px-16 2xl:px-24;
+}
+
+@layer utilities {
+  .overflow-x-hidden-root {
+    @apply overflow-x-hidden w-full;
+  }
+}
+
+html, body {
+  @apply overflow-x-hidden w-full m-0 p-0;
+}
