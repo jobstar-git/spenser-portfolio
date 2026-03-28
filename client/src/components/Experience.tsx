@@ -77,34 +77,14 @@ export default function Experience() {
                       </div>
                       <div className="min-w-0">
                         <p className="font-bold text-foreground truncate">{exp.company}</p>
-                        <p className="text-sm text-muted-foreground truncate">{exp.location}</p>
+
                       </div>
                    </div>
                    <p className="text-sm font-medium text-muted-foreground mb-1">{exp.period}</p>
-                   <p className="text-xs text-muted-foreground/60 uppercase tracking-wider">[Full Time] [Remote]</p>
+
                 </div>
 
-                {/* Right Side: Description */}
-                <div className="w-full flex-1 bg-white/5 backdrop-blur-sm p-5 md:p-6 rounded-xl border border-white/5 hover:border-white/10 transition-all">
-                  <div className="mb-6">
-                    <ul className="space-y-3 md:space-y-4">
-                      {exp.description.split('. ').map((point, pIdx) => (
-                        <li key={pIdx} className="flex gap-3 md:gap-4 text-foreground/80 text-sm md:text-base leading-relaxed font-light">
-                          <span className="text-primary mt-2 shrink-0 w-1.5 h-1.5 rounded-full bg-primary" />
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
-                    {exp.skills.map((skill, sIdx) => (
-                      <span key={sIdx} className="text-[9px] md:text-[10px] px-2 md:px-3 py-1 rounded-full bg-primary/10 text-primary font-bold border border-primary/20 uppercase tracking-wider">
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+         
               </div>
             </motion.div>
           ))}

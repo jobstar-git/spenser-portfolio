@@ -32,7 +32,7 @@ export default function Hero() {
 
             <div className="flex items-center gap-6">
               <a
-                href="https://www.linkedin.com/in/duane-horton-8ab528234/"
+                href="https://www.linkedin.com/in/spenser-mills/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors hover:-translate-y-1 transform duration-200"
@@ -40,7 +40,7 @@ export default function Hero() {
                 <Linkedin className="w-6 h-6" />
               </a>
               <a
-                href="https://github.com/DuaneH-www"
+                href="https://github.com/spenser-m728"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors hover:-translate-y-1 transform duration-200"
