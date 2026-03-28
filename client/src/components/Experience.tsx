@@ -2,29 +2,37 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
-    period: "Mar 2017 - Nov 2019",
-    role: "Senior Backend Engineer",
-    company: "Roofstock",
-    location: "Oakland, California, United States · On-site",
-    skills: ["Python", "Node.js", "Express", "NLP", "Machine Learning", "Microservices", "React", "Vue.js", "Angular"],
-    description: "Python & Node PHP | Backend Development. Architected and built high-performance backend systems and microservices. Integrated advanced NLP and machine learning models to enhance product capabilities."
+    period: "2022.10 -2026.2",
+    role: "Senior Full Stack Developer",
+    company: "Insquad ",
+    location: "",
+    skills: [""],
+    description: ""
   },
   
   {
-    period: "Mar 2017 - Nov 2019",
-    role: "Senior Backend Engineer",
-    company: "Roofstock",
-    location: "Oakland, California, United States · On-site",
-    skills: ["Python", "Node.js", "Express", "NLP", "Machine Learning", "Microservices", "React", "Vue.js", "Angular"],
-    description: "Python & Node PHP | Backend Development. Architected and built high-performance backend systems and microservices. Integrated advanced NLP and machine learning models to enhance product capabilities."
+    period: "2019.6 - 2022.8",
+    role: "Senior Full Stack Developer",
+    company: "Atlasiko Ink",
+     location: "",
+    skills: [""],
+    description: ""
   },
   {
-    period: "Jan 2014 - Dec 2016",
+    period: "2017.12 - 2019.6",
+    role: "Senior Full Stack Python Developer",
+    company: "Atlasiko Ink",
+     location: "",
+    skills: [""],
+    description: ""
+  },
+  {
+    period: "2014.10 - 2017.11",
     role: "Full Stack Developer",
-    company: "ThredUp",
-    location: "Oakland, California, United States · Remote",
-    skills: ["C#/.NET", "Java", "JavaScript", "Node.js", "MongoDB", "Angular", "Nuxt.js", "WordPress", "Shopify"],
-    description: "Frontend & Backend Development, CMS Development. Developed and maintained diverse web applications and e-commerce platforms. Specialized in creating custom CMS solutions and optimizing frontend performance."
+    company: "Bluestone Apps",
+     location: "",
+    skills: [""],
+    description: ""
   }
 ];
 

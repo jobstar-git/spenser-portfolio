@@ -46,15 +46,13 @@ const skillCategories = [
     icon: Database,
     skills: [
       { name: "Python", icon: SiPython },
-      { name: "GoLang", icon: SiGo },
+  
       { name: "Node.js", icon: SiNodedotjs },
       { name: "C#", icon: SiSharp },
-      { name: "Java", icon: SiSharp }, // Using SiSharp as a fallback or if Si icon is missing for Java
       { name: "Microservices", icon: Cpu },
       { name: "REST", icon: Code2 },
-      { name: "Rust", icon: SiRust },
-      { name: "C++", icon: SiCplusplus },
-      { name: "Spring Boot", icon: SiSpringboot }
+
+
     ]
   },
   {
@@ -81,12 +79,9 @@ const skillCategories = [
       { name: "LLMs", icon: SiOpenai },
       { name: "LangChain", icon: Code2 },
       { name: "ML", icon: Cpu },
-      { name: "Vector DBs", icon: Database },
       { name: "Airflow", icon: Cloud },
       { name: "PyTorch", icon: Code2 },
       { name: "TensorFlow", icon: Code2 },
-      { name: "Pandas", icon: Code2 },
-      { name: "Scikit", icon: Code2 }
     ]
   },
   {
@@ -101,8 +96,6 @@ const skillCategories = [
       { name: "Terraform", icon: Code2 },
       { name: "CI/CD", icon: Code2 },
       { name: "PostgreSQL", icon: SiPostgresql },
-      { name: "Redis", icon: SiRedis },
-      { name: "Kafka", icon: SiApachekafka }
     ]
   },
   {
@@ -194,10 +187,10 @@ export default function Skills() {
                 <div className="p-10 bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl hover:border-primary/30 transition-all shadow-xl relative z-20">
                     <div className="flex justify-between items-baseline mb-4">
                       <h4 className="font-bold text-2xl tracking-tight">Bachelor of Science</h4>
-                      <span className="text-primary font-bold bg-primary/10 px-4 py-1 rounded-full text-xs tracking-wider uppercase">2010 - 2013</span>
+                      <span className="text-primary font-bold bg-primary/10 px-4 py-1 rounded-full text-xs tracking-wider uppercase">20010 ~ 2014</span>
                     </div>
                     <p className="text-xl font-medium mb-1 text-foreground">Computer Science</p>
-                    <p className="text-muted-foreground text-sm uppercase tracking-wider font-light">Northeastern University</p>
+                    <p className="text-muted-foreground text-sm uppercase tracking-wider font-light">West Chester University of Pennsylvania</p>
                 </div>
             </div>
         </motion.div>
