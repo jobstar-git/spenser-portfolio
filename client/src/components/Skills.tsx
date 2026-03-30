@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useState, useEffect, ElementType } from "react";
 import { 
   Code2, 
   Database, 
@@ -116,6 +117,91 @@ const skillCategories = [
   }
 ];
 
+function SkillCard({ skill, idx }: { skill: { name: string; icon: ElementType }; idx: number }) {
+  const [hovered, setHovered] = useState(false);
+  const [count, setCount] = useState(0);
+  const barControls = useAnimation();
+  const glowControls = useAnimation();
+
+  useEffect(() => {
+    if (!hovered) {
+      setCount(0);
+      barControls.start({ width: "0%", transition: { duration: 0.15 } });
+      return;
+    }
+
+    // Bar sweep 0 → 100%
+    barControls.start({
+      width: "100%",
+      transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] },
+    });
+
+    // Glow pulse on completion
+    glowControls.start({
+      boxShadow: ["0 0 0px rgba(34,197,94,0)", "0 0 16px rgba(34,197,94,0.7)", "0 0 6px rgba(34,197,94,0.3)"],
+      transition: { duration: 0.9, times: [0, 0.8, 1] },
+    });
+
+    // Count 0 → 100
+    let start = 0;
+    const step = Math.ceil(100 / 40);
+    const timer = setInterval(() => {
+      start = Math.min(start + step, 100);
+      setCount(start);
+      if (start >= 100) clearInterval(timer);
+    }, 22);
+    return () => clearInterval(timer);
+  }, [hovered]);
+
+  return (
+    <motion.div
+      key={skill.name}
+      initial={{ opacity: 0, y: 30, scale: 0.92 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      whileHover={{ y: -4, scale: 1.04 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4, delay: idx * 0.04 }}
+      animate={glowControls}
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
+      className="flex flex-col p-4 bg-white/5 backdrop-blur-md rounded-lg border border-white/10 hover:border-primary/50 transition-colors cursor-default group"
+    >
+      <div className="flex items-center gap-3 mb-3">
+        <motion.div
+          animate={hovered ? { rotate: 360, backgroundColor: "rgba(34,197,94,0.2)" } : { rotate: 0, backgroundColor: "rgba(255,255,255,0.1)" }}
+          transition={{ duration: 0.6 }}
+          className="w-8 h-8 rounded flex items-center justify-center text-primary shrink-0"
+        >
+          <skill.icon className="w-5 h-5" />
+        </motion.div>
+        <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground group-hover:text-foreground transition-colors">
+          {skill.name}
+        </span>
+      </div>
+      <div className="relative flex items-center">
+        <div className="flex-1 h-1.5 rounded-full bg-white/10 overflow-hidden">
+          <motion.div
+            className="h-full rounded-full"
+            style={{ background: "linear-gradient(90deg, #16a34a, #22c55e, #86efac)" }}
+            animate={barControls}
+            initial={{ width: "0%" }}
+          />
+        </div>
+        <motion.div
+          animate={{ opacity: hovered ? 1 : 0, y: hovered ? 0 : 4 }}
+          transition={{ duration: 0.2 }}
+          className="absolute -top-7 right-0 pointer-events-none"
+        >
+          <span className="text-[10px] font-bold text-white bg-primary px-2 py-0.5 rounded shadow-lg whitespace-nowrap">
+            {count}%
+          </span>
+          <div className="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-x-4 border-x-transparent border-t-4 border-t-primary" />
+        </motion.div>
+      </div>
+    </motion.div>
+  );
+}
+
 export default function Skills() {
   return (
     <section id="skills" className="section-padding bg-transparent relative overflow-hidden">
@@ -136,21 +222,7 @@ export default function Skills() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
           {skillCategories.flatMap(cat => cat.skills).map((skill, idx) => (
-            <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.05 }}
-              className="flex items-center gap-3 p-4 bg-white/5 backdrop-blur-md rounded-lg border border-white/10 hover:border-primary/30 transition-all group"
-            >
-              <div className="w-8 h-8 rounded bg-white/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                <skill.icon className="w-5 h-5" />
-              </div>
-              <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground group-hover:text-foreground transition-colors">
-                {skill.name}
-              </span>
-            </motion.div>
+            <SkillCard key={skill.name} skill={skill} idx={idx} />
           ))}
         </div>
 

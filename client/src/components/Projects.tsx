@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowUpRight } from "lucide-react";
 import project1 from "@assets/generated_images/2.png";
 import project2 from "@assets/generated_images/3.png";
 import project3 from "@assets/generated_images/1.png";
@@ -102,26 +101,18 @@ export default function Projects() {
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover transition-transform duration-700"
                 />
-                
-                {/* Overlay - Always dark for contrast with text */}
-                <div className="absolute inset-0 bg-black/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 sm:p-6 text-center backdrop-blur-sm">
-                  <div className="flex flex-col items-center justify-center h-full translate-y-4 group-hover:translate-y-0 transition-transform duration-300 ease-out">
-                    <h3 className="text-lg sm:text-2xl font-bold text-white mb-2 line-clamp-2">{project.title}</h3>
-                    <p className="text-gray-300 mb-4 text-base sm:text-lg">{project.company}</p>
-                    
-                    <div className="flex flex-wrap justify-center gap-2 mb-6 hidden sm:flex">
-                      {project.skills.slice(0, 3).map((skill) => (
-                        <span key={skill} className="text-xs px-2 py-1 rounded-full bg-blue-500/20 text-blue-100 border border-blue-500/30 font-medium">
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                    
-                    <div className="inline-flex items-center gap-2 text-white font-medium border-b border-blue-400 pb-0.5 hover:text-blue-300 transition-colors text-sm sm:text-base">
-                      View Case Study <ArrowUpRight className="w-4 h-4" />
-                    </div>
+
+                {/* Bottom band - slides up on hover */}
+                <div className="absolute bottom-0 left-0 right-0 h-[26%] bg-black/85 backdrop-blur-md border-t-2 border-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out flex flex-col justify-evenly px-5 py-2">
+                  <h3 className="text-sm sm:text-base font-bold text-white truncate drop-shadow leading-none">{project.title}</h3>
+                  <div className="flex items-center gap-1.5 overflow-hidden">
+                    {project.skills.slice(0, 3).map((skill, i) => (
+                      <span key={skill} className="flex-shrink-0 text-[10px] sm:text-[11px] font-semibold text-primary bg-primary/15 border border-primary/40 px-2 py-0.5 rounded-full whitespace-nowrap">
+                        {skill}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </motion.div>

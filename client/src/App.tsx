@@ -21,7 +21,7 @@ function Router() {
 
 function App() {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem storageKey="theme">
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} storageKey="theme">
       <NeuralBackground />
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>

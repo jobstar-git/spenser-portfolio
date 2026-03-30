@@ -1,19 +1,10 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { Github, Linkedin, Moon, Sun } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useTheme } from "next-themes";
-import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState("");
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  // Avoid hydration mismatch
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const links = [
     { name: "Home", href: "/#home" },
@@ -71,8 +62,12 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 glass-nav border-b-2 border-primary/20 shadow-lg shadow-primary/5"
     >
       <div className="container-width flex items-center h-16 md:h-20">
-        <Link href="/" className="text-xl font-bold font-heading tracking-tight hover:text-primary transition-colors cursor-pointer mr-auto" onClick={(e) => scrollToSection(e as any, "#home")}>
-            DH<span className="text-primary">.</span>
+        <Link href="/" className="cursor-pointer mr-auto flex items-center gap-2 group" onClick={(e) => scrollToSection(e as any, "#home")}>
+          <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform duration-300 group-hover:scale-110">
+            <polygon points="19,2 36,10.5 36,27.5 19,36 2,27.5 2,10.5" fill="none" stroke="#22c55e" strokeWidth="1.5"/>
+            <polygon points="19,7 31,13.5 31,26.5 19,33 7,26.5 7,13.5" fill="#22c55e" fillOpacity="0.08"/>
+            <text x="19" y="25" textAnchor="middle" fontFamily="system-ui, sans-serif" fontSize="13" fontWeight="800" fill="white" letterSpacing="-0.5">SM</text>
+          </svg>
         </Link>
 
         <div className="hidden md:flex items-center gap-10 mx-auto">
@@ -114,22 +109,6 @@ export default function Navbar() {
             <Linkedin className="w-5 h-5" />
           </a>
           
-          {mounted && (
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="ml-2 rounded-full"
-              title="Toggle theme"
-            >
-              {theme === "dark" ? (
-                <Sun className="h-5 w-5 transition-all" />
-              ) : (
-                <Moon className="h-5 w-5 transition-all" />
-              )}
-              <span className="sr-only">Toggle theme</span>
-            </Button>
-          )}
         </div>
       </div>
     </motion.nav>

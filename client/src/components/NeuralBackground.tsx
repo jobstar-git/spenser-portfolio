@@ -1,7 +1,21 @@
-import { useRef, useMemo } from 'react';
+import { useRef, useMemo, Component, ReactNode } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
 import * as THREE from 'three';
+
+class WebGLErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
+  constructor(props: { children: ReactNode }) {
+    super(props);
+    this.state = { hasError: false };
+  }
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+  render() {
+    if (this.state.hasError) return null;
+    return this.props.children;
+  }
+}
 
 function Stars() {
   const ref = useRef<any>();
@@ -21,7 +35,6 @@ function Stars() {
       ref.current.rotation.x -= 0.0005;
       ref.current.rotation.y -= 0.0005;
       
-      // Mouse following effect with lower sensitivity for smoother feel
       ref.current.position.x = THREE.MathUtils.lerp(ref.current.position.x, mouse.x * 0.2, 0.05);
       ref.current.position.y = THREE.MathUtils.lerp(ref.current.position.y, mouse.y * 0.2, 0.05);
     }
@@ -46,9 +59,16 @@ function Stars() {
 export default function NeuralBackground() {
   return (
     <div className="fixed inset-0 -z-20 bg-background pointer-events-none">
-      <Canvas camera={{ position: [0, 0, 1] }}>
-        <Stars />
-      </Canvas>
+      <WebGLErrorBoundary>
+        <Canvas
+          camera={{ position: [0, 0, 1] }}
+          onCreated={({ gl }) => {
+            gl.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+          }}
+        >
+          <Stars />
+        </Canvas>
+      </WebGLErrorBoundary>
     </div>
   );
 }
