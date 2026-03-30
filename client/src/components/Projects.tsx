@@ -105,11 +105,11 @@ export default function Projects() {
                 />
 
                 {/* Bottom band - slides up on hover */}
-                <div className="absolute bottom-0 left-0 right-0 h-[26%] bg-black/85 backdrop-blur-md border-t-2 border-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out flex flex-col justify-evenly px-5 py-2">
+                <div className="absolute bottom-0 left-0 right-0 h-[26%] bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out flex flex-col justify-evenly px-5 py-2">
                   <h3 className="text-sm sm:text-base font-bold text-white truncate drop-shadow leading-none">{project.title}</h3>
                   <div className="flex items-center gap-1.5 overflow-hidden">
-                    {project.skills.slice(0, 3).map((skill, i) => (
-                      <span key={skill} className="flex-shrink-0 text-[10px] sm:text-[11px] font-semibold text-primary bg-primary/15 border border-primary/40 px-2 py-0.5 rounded-full whitespace-nowrap">
+                    {project.skills.slice(0, 3).map((skill) => (
+                      <span key={skill} className="flex-shrink-0 text-[10px] sm:text-[11px] font-semibold text-white bg-white/20 border border-white/40 px-2 py-0.5 rounded-full whitespace-nowrap">
                         {skill}
                       </span>
                     ))}
