@@ -18,7 +18,7 @@ const experiences = [
   },
   {
     period: "Oct 2014 - Nov 2017",
-    role: "Full Stack Developer",
+    role: "Full Stack React Native & Flutter Developer",
     company: "Bluestone Apps",
   },
 ];
