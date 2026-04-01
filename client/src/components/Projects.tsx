@@ -8,9 +8,68 @@ import project5 from "@assets/generated_images/6.png";
 import project6 from "@assets/generated_images/4.png";
 import project7 from "@assets/generated_images/7.png";
 import project8 from "@assets/generated_images/8.png";
-
+import project9 from "@assets/generated_images/9.png";
+import project10 from "@assets/generated_images/10.png";
+import project11 from "@assets/generated_images/11.png";
+import project12 from "@assets/generated_images/12.png";
+import project13 from "@assets/generated_images/13.png";
+import project14 from "@assets/generated_images/14.png";
 // Updated projects with ID for routing
 const projects = [
+   {
+    id: "data-pipelines14",
+    title: "Twilio SMS Platform",
+    company: "Financial",
+    image: project14,
+    skills: ["React","Twilio", "A2P 10 DLC", "TypeScript", "SMS", "Node.js"]
+  
+   },
+  {
+    id: "enterprise-ai",
+    title: "Earth Hero",
+    company: "E-Commerce",
+    image: project3,
+    skills: ["Shopify / Shopify Plus", "Liquid", "JavaScript", "REST / GraphQL API integration", "Responsive design & UI/UX", "SEO (on-page optimization, metadata, structured data)"],
+  },
+    {
+    id: "data-pipelines9",
+    title: "BrightHive",
+    company: "BrightHive",
+    image: project9,
+    skills: ["React", "Node.js"]
+  
+   },
+
+   {
+    id: "data-pipelines11",
+    title: "KnoCommerce",
+    company: "E-Commerce",
+    image: project11,
+    skills: ["Vue", "Node.js"],
+  },
+  {
+    id: "data-pipelines12",
+    title: "Breakthru",
+    company: "",
+    image: project12,
+    skills: ["React Native", "Node.js"],
+  },
+    {
+    id: "data-pipelines10",
+    title: "NextME",
+    company: "NextME",
+    image: project10,
+    skills: ["React"]
+  
+   },
+   {
+    id: "data-pipelines13",
+    title: "Tax Function",
+    company: "Tax Function",
+    image: project13,
+    skills: ["React", "Kendo UI", ".NET Core"]
+  
+   },
     {
     id: "data-pipelines1",
     title: "Aily - Real Time Intelligence For Employee",
@@ -26,13 +85,7 @@ const projects = [
     image: project8,
     skills: ["React", "Node.js", "SQL", "Authentication & Authorization", "Performance optimization", "Deployment & DevOps basics", "Data integration and workflows"]
   },
-  {
-    id: "enterprise-ai",
-    title: "Earth Hero",
-    company: "E-Commerce",
-    image: project3,
-    skills: ["Shopify / Shopify Plus", "Liquid", "JavaScript", "REST / GraphQL API integration", "Responsive design & UI/UX", "SEO (on-page optimization, metadata, structured data)"],
-  },
+  
   {
     id: "vehicle-claims",
     title: "BackRoads",

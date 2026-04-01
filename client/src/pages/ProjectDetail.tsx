@@ -11,7 +11,12 @@ import project5 from "@assets/generated_images/6.png";
 import project6 from "@assets/generated_images/4.png";
 import project7 from "@assets/generated_images/7.png";
 import project8 from "@assets/generated_images/8.png";
-
+import project9 from "@assets/generated_images/9.png";
+import project10 from "@assets/generated_images/10.png";
+import project11 from "@assets/generated_images/11.png";
+import project12 from "@assets/generated_images/12.png";
+import project13 from "@assets/generated_images/13.png";
+import project14 from "@assets/generated_images/14.png";
 // Project data store - typically this would be in a separate data file or fetched
 const projectsData = {
   "enterprise-ai": {
@@ -130,22 +135,111 @@ const projectsData = {
     ],
     links: { demo: "https://www.ailylabs.com/", github: "#" }
   },
-   "data-pipelines2": {
-    title: "QuestDiagnostics",
-    company: "HealthCare",
+
+  "data-pipelines9": {
+    title: "BrightHive",
+    company: "",
     date: "",
-    image: project8,
-    description: "Quest Diagnostics offers a wide range of diagnostic testing services and healthcare IT solutions, helping patients, clinicians, and healthcare providers make informed health decisions through reliable lab results and digital tools.",
-    role: "Full-Stack Developer",
-    technologies: ["React", "Node.js", "SQL", "Authentication & Authorization", "Performance optimization", "Deployment & DevOps basics", "Data integration and workflows"],
+    image: project9,
+    description: "BrightHive is a platform that enables secure data sharing, workflow design, and real-time monitoring through a user-friendly full-stack interface.",
+    role: "",
+    technologies:["React", "Node.js"],
     features: [
-      "In this project, I was responsible for implementing both frontend and backend components to support key features of the Quest Diagnostics web platform. On the frontend, I used React to build responsive user interfaces that allow users to search for tests, view educational content, and interact with tools that support healthcare providers and patients.",
-      "On the backend, I utilized Node.js to develop scalable APIs and server logic that handle data requests, integrate with secured healthcare services, and support efficient data workflows. I collaborated closely with the design and data teams to ensure seamless communication between the frontend and backend, optimized for performance and usability.",
-      "One of the primary features I worked on was the interactive test directory and patient information portal, which required real‑time data fetching, dynamic routing, and secure handling of healthcare content. This involved implementing API endpoints, managing state efficiently, and ensuring accessibility across devices.",
-      "Overall, working on Quest Diagnostics strengthened my skills in full‑stack development, building modern frontend experiences with React, and designing backend services with Node.js to support high‑traffic, enterprise‑scale healthcare applications.",
+    
+      "BrightHive is a platform designed to unify and automate critical processes for trusted data sharing and management. It aims to fill the sharing and collaboration gap in modern data stacks. BrightHive enables data teams to connect and collaborate, allowing them to build impactful data products in half the time.",
+      "The platform provides a secure and governed workspace for metadata sharing, data workflow design, trusted execution, and monitored use. It's designed to increase the reach and impact of existing data stacks by combining them with others in a trusted environment.",
+      "In this project, I was responsible for developing a user-friendly interface using React for the frontend. This involved creating various features such as user authentication, data workflow design interfaces, and system monitoring dashboards.",
+      "On the backend, I used Node.js to build a robust and scalable server that could handle multiple requests simultaneously. I implemented various APIs for different functionalities such as user authentication, metadata management, and data workflow execution. I also integrated a database to store and manage user data and metadata.",
+      "One of the key features I worked on was the data workflow design system. This involved creating a drag-and-drop interface for users to design their data workflows, and implementing a system on the backend to execute these workflows in a trusted environment.",
+      "I also worked on the system monitoring dashboard, which involved creating real-time visualizations of system usage and performance. This required a deep understanding of both the technical aspects of system monitoring and the user requirements for this feature.",
+      "Overall, working on this project gave me a deep understanding of the challenges and opportunities in the data management space, and I believe this experience would be valuable in future projects in this area."
+      
+    ],
+    links: { demo: "https://www.brighthive.io/", github: "#" }
+  },
+  "data-pipelines10": {
+    title: "NextME",
+    company: "NextME",
+    date: "",
+    image: project10,
+    description: "NextME is a comprehensive appointment, waitlist, and queue management system designed for businesses. It enables efficient management of waitlists and appointments, provides real-time guest engagement, and offers tools to enhance customer service and business growth.",
+    role: "Senior Full Stack Web & Mobile APP Developer",
+    technologies: ["React", "React Native"],
+    features: [
+    
+      "My role involved using React, a popular library for building UIs, to develop the user interface components for the app. My tasks encompassed the creation of interactive features like check-in kiosks and virtual waiting rooms, the integration of APIs to facilitate data synchronization across various devices, and the establishment of reporting mechanisms for producing comprehensive daily, weekly, and monthly customer service reports. The aim of these responsibilities was to ensure a fluid user experience, enhance application performance, and maintain platform reliability.",
+      
+    ],
+    links: { demo: "https://nextmeapp.com/", github: "#" }
+  },
+  "data-pipelines11": {
+    title: "KnoCommerce",
+    company:"E-Commerce",
+    date: "",
+    image: project11,
+    description: "KnoCommerce is a customer survey platform specifically designed for eCommerce brands. It provides a suite of tools to help businesses understand their customers better, with features like abandoned cart, attribution, and post-purchase surveys. The platform integrates with popular eCommerce platforms like Shopify and Klaviyo, and it's used by over 1,800 direct-to-consumer brands.",
+    role: "Full Stack Developer",
+    technologies: ["Vue", "Node"],
+    features: [
+    
+      "On the frontend, I used Vue.js to create interactive and dynamic user interfaces for the survey tools and reporting dashboards. This involves creating components for different question types, response analytics, and data visualization.",
+      "On the backend, using Node.js, I worked on building secure and scalable APIs to handle data transactions. This includes managing survey data, user responses, and integrations with other platforms. I also participated in the development of the platform's distinctive features, such as multi-touch attribution templates, advanced audience segmentation, and automatic generation of promotional codes.",
+      "Overall, working on this platform provided me with a deep understanding of both the technical aspects of web development and the business needs of eCommerce brands.",
+      
+    ],
+    links: { demo: "https://knocommerce.com/", github: "#" }
+  },
+  "data-pipelines12": {
+    title: "Breakthru",
+    company: "",
+    date: "",
+    image: project12,
+    description: "The Breakthru app is a specialized educational tool designed for students. It offers insights into various companies, initiatives, products, and job opportunities. What sets Breakthru apart is its unique feature that allows students to earn money as they learn about these topics. This feature could be especially advantageous for students who are saving for college-related expenses or other needs.",
+    role: "Senior React Native Developer",
+    technologies: ["React Native"],
+    features: [
+    
+      "Working on the Breakthru app was a rewarding and challenging experience. React Native was a great choice for this project due to its cross-platform capabilities, allowing us to develop the app for both iOS and Android simultaneously. This saved us a significant amount of time and resources.",
+      "The app's unique feature of allowing students to earn money while learning about various companies and initiatives required careful planning and implementation. We had to ensure the app was not only educational but also engaging and user-friendly to keep the students motivated.",
+      "One of my challenges was integrating the 'earn and daily opportunity' feature. It required me to create a system that could regularly update and provide new learning opportunities while also tracking the earnings of each user accurately.",
+      "Despite the challenges, seeing the app come to life and provide value to students made the experience worthwhile. The feedback from users, especially from students who were able to save for their college expenses, was particularly rewarding."
+
+      
+    ],
+    links: { demo: "https://www.joinbreakthru.com/", github: "#" }
+  },
+  "data-pipelines13": {
+    title: "Tax Function",
+    company: "AI Platform",
+    date: "",
+    image: project13,
+    description: "TFLLC Tax function is a platform that has been developed to provide companies with effective solutions for their tax planning and documentation, so as to save time and human mistakes.",
+    role: "Full Stack .NET Engineer",
+    technologies: ["React", "Kendo UI", ".NET Core"],
+    features: [
+    
+      "The system can be used by multiple companies at the same time and within each company, multiple user types can be defined.",
+      "The project addressed challenges like tenant configuration, Azure Logic App integration, and Azure Portal settings by enabling AD user login, providing a prebuilt login UI, and scheduling tasks with Logic Apps.",
+      "This resulted in over 90% website performance, optimized reports, 24/7 support, complex calculation reports, and a responsive UI managed with Bootstrap CSS."
+      
+    ],
+    links: { demo: "https://www.taxfunction.com/", github: "#" }
+  },
+  
+   "data-pipelines14": {
+    title: "Twilio SMS Platform",
+    company: "Financial",
+    date: "",
+    image: project14,
+    description: "SCL Twilio SMS Platform is a high-volume, fully compliant outbound messaging system for financial services, enabling 20,000+ daily messages, real-time monitoring, and end-to-end campaign management.",
+    role: "Senior Full-Stack Developer",
+    technologies:  ["React","Twilio", "A2P 10 DLC", "TypeScript", "SMS", "Node.js"],
+    features: [
+      "A2P 10 DLC registeration, approved",
+      "Built  a high-volume, fully compliant outbound messaging system for financial services,Daily 20000 Messages, Real Time Monitoring"
      
     ],
-    links: { demo: "https://www.questdiagnostics.com/", github: "#" }
+    links: { demo: "https://app.sclcapital.io/", github: "#" }
   }
 };
 
