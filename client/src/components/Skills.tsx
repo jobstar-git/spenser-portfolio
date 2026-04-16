@@ -57,16 +57,12 @@ const skillCategories = [
     ]
   },
   {
-    title: "Frontend & Mobile",
+    title: "Frontend",
     icon: Layout,
     skills: [
       { name: "React", icon: SiReact },
       { name: "Next.js", icon: SiNextdotjs },
       { name: "TypeScript", icon: SiTypescript },
-      { name: "React Native", icon: SiReact },
-      { name: "Swift", icon: Code2 },
-      { name: "Kotlin", icon: Code2 },
-      { name: "Flutter", icon: Code2 },
       { name: "Vue.js", icon: SiVuedotjs },
       { name: "Angular", icon: SiAngular },
       { name: "TailwindCSS", icon: SiTailwindcss }

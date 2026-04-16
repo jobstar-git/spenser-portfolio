@@ -8,17 +8,17 @@ const experiences = [
   },
   {
     period: "Jun 2019 - Aug 2022",
-    role: "Senior Full Stack .NET Developer",
+    role: "Senior Full Stack Developer",
     company: "Atlasiko Inc",
   },
   {
     period: "Dec 2017 - Jun 2019",
-    role: "Senior Full Stack Python Developer",
+    role: "Senior Full Stack Developer",
     company: "Atlasiko Inc",
   },
   {
     period: "Oct 2014 - Nov 2017",
-    role: "Full Stack React Native & Flutter Developer",
+    role: "Full Stack Developer",
     company: "Bluestone Apps",
   },
 ];
